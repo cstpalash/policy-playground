@@ -9,8 +9,6 @@ module "s3_bucket" {
   bucket = "storage-test-dev"
   acl    = "private"
 
-  region = vars.region
-
   versioning = {
     enabled = true
   }
