@@ -9,9 +9,13 @@ terraform {
   required_version = ">= 0.14.9"
 }
 
+variable "aws_region" {
+  type = string
+}
+
 provider "aws" {
   profile = "default"
-  region  = vars.region
+  region  = var.aws_region
 }
 
 module "s3_bucket" {
