@@ -9,27 +9,16 @@ terraform {
   required_version = ">= 0.14.9"
 }
 
-variable "aws_region" {
-  type = string
-}
-
 provider "aws" {
   profile = "default"
-  region  = var.aws_region
+  region  = "us-west-2"
 }
 
-module "s3_bucket" {
-  source = "terraform-aws-modules/s3-bucket/aws"
-
-  bucket = "storage-test-dev"
-  acl    = "private"
-
-  versioning = {
-    enabled = true
-  }
+resource "aws_instance" "app_server" {
+  ami           = "ami-830c94e3"
+  instance_type = "t2.micro"
 
   tags = {
     env = "dev"
   }
-
 }
