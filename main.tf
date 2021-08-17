@@ -21,5 +21,6 @@ resource "aws_instance" "app_server" {
   tags = {
     env = "dev"
     team = "new-dev-team"
+    Name = var.instance_name
   }
 }
