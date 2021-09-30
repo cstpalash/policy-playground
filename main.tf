@@ -14,7 +14,7 @@ provider "aws" {
   region  = "us-west-2"
 }
 
-resource "aws_s3_bucket" "b" {
+resource "aws_s3_bucket" "my-tf-test-bucket" {
   bucket = "my-tf-test-bucket"
   acl    = "private"
 
