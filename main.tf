@@ -14,12 +14,11 @@ provider "aws" {
   region  = "us-west-2"
 }
 
-resource "aws_s3_bucket" "my-tf-test-bucket" {
-  bucket = "my-tf-test-bucket-555"
+resource "aws_s3_bucket" "demo" {
+  bucket = "${var.s3_bucket_name}"
   acl    = "private"
 
   tags = {
-    Name        = "My bucket"
     Environment = "Dev"
   }
 }
