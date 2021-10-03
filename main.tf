@@ -22,3 +22,12 @@ resource "aws_s3_bucket" "demo" {
     Environment = "Dev"
   }
 }
+
+resource "aws_s3_bucket" "demo1" {
+  bucket = "another-test-bucket-8445"
+  acl    = "private"
+
+  tags = {
+    Environment = "Dev"
+  }
+}
