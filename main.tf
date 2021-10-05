@@ -18,14 +18,6 @@ resource "aws_s3_bucket" "demo" {
   bucket = "${var.s3_bucket_name}"
   acl    = "private"
 
-  server_side_encryption_configuration {
-    rule {
-      apply_server_side_encryption_by_default {
-        kms_master_key_id = "arn:aws:kms:us-west-2:611511327901:key/a98051f9-3213-4126-b438-111122246bef"
-        sse_algorithm     = "aws:kms"
-      }
-    }
-  }
 
   tags = {
     Environment = "Dev"
